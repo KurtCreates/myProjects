@@ -1,0 +1,55 @@
+/*
+  Creation date: 5/21/2026
+  By: Kurtis Bradley
+  
+  Software to test out Doubles, System.out, Scanner
+
+*/
+
+package printF;
+import java.util.Scanner;
+
+
+public class compundInterestCalculator {
+
+	public static void main(String[] args) {
+		
+		//creation of scanner
+		Scanner scanner = new Scanner(System.in);
+		
+		//creation of variables
+		double principal;
+		int years;
+		int compound;
+		double rate;
+		
+		//asks user what the investment is
+		System.out.print("What is the intial investment in your account? (Enter exact dollar amount)\n\r");
+		System.out.println(" ");
+		principal = scanner.nextDouble();
+		
+		//interest rate is asked
+		System.out.println("What is the interest rate? (enter exact amount)");
+		rate = scanner.nextDouble();
+		double correctRate = rate / 100.0;
+		//the rate must be divided by 100 to allow it to output a correct number
+		
+		//Asks how many times its compounded
+		System.out.println("How many times is it compounded a year? (Annually (1), Biannually (2), Quaterly (4), Monthly(12))");
+		compound = scanner.nextInt();
+		
+		//how many years to calculate
+		System.out.println("How many years is the money in the account");
+		years = scanner.nextInt();
+		
+		//calculation for the interest
+		double amount = principal * Math.pow(1 + correctRate / compound, compound * years);
+		
+		//final message
+		System.out.printf("The amount in your account after %d years is $%,.2f", years, amount);
+
+		//close scanner
+		scanner.close();
+	}
+
+}
