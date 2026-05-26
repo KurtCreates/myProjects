@@ -1,38 +1,38 @@
-package arithmeticFun;
+package arithmetic;
 import java.util.Scanner;
 
-
-
-public class shoppingKart {
-	
+public class Arithmetic {
 
 	public static void main(String[] args) {
-		
-
 		//creating the scanner
 		Scanner scanner = new Scanner(System.in);
-		
-		//Questions
-		System.out.print("What item would you like to buy? ");
-		//Creation of variables
-		String item;
-		item = scanner.nextLine(); 
+
+        System.out.print("What item would you like to buy? ");
+        String item = scanner.nextLine();
+
+        System.out.print("What is the price per item (like 12.99)? ");
+        String priceInput = scanner.next();
+
+        String[] parts = priceInput.split("\\.");
+        int dollars = Integer.parseInt(parts[0]);
+        int cents = Integer.parseInt(parts[1]);
+
+        int priceInCents = dollars * 100 + cents;
+
+        System.out.print("How many would you like? ");
+        int quantity = scanner.nextInt();
+
+        int totalInCents = priceInCents * quantity;
+
+        System.out.println("You have purchased " + quantity + " " + item + "s.");
+
+        System.out.printf("Total = $%d.%02d\n",
+                totalInCents / 100,
+                totalInCents % 100);
+
+        scanner.close();
 				
-		System.out.print("What is the price per item? ");
-		int price;
-		price = scanner.nextInt();
-		
-		System.out.print("How many would you like? ");
-		int amount;
-		amount = scanner.nextInt();
-		
-		
-		//output
-		System.out.println("You have purchased " + amount + " " + item + "s.");
-		System.out.print("The total is " + "$" + amount*price + ".");
-		
-		
+				
 
+			}
 	}
-
-}
