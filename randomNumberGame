@@ -1,0 +1,239 @@
+/*
+ * Creation Date: 5/22/2026
+ * By: Kurtis Bradley
+ * 
+ * to test software on scanner, random, loops
+ */
+package whileLoops;
+import java.util.Scanner;
+import java.util.Random;
+
+public class randomNumberGuessing {
+
+	public static void main(String[] args) {
+		//random number guessing game, work on one thing at a time
+		
+		Scanner scanner = new Scanner(System.in);
+		Random random = new Random();
+		
+		//creation of the gameOn variable
+		String gameOn;
+		
+		//asking the user
+		System.out.println("Would you like to play the guessing game? (y/n)");
+	    gameOn = scanner.nextLine();
+	
+	    //for keeping the game running
+	    while (gameOn.equalsIgnoreCase("y")) {
+	    	
+	    	//welcome message
+	    	System.out.println("You have 10 tries to guess the computers number from 1 - 100. Good Luck!");	
+			int computerChoice = random.nextInt(101);
+			//computer picks number
+			System.out.println("The computer has picked a number, what is your choice?");
+			
+			//beginning of game
+			int playerChoice1 = scanner.nextInt();
+			//the if statement to see if use has won/lost
+			if (playerChoice1 == computerChoice) {
+				//wining message
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				//to make sure player enters correct number
+				while (playerChoice1 < 1 || playerChoice1 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice1 = scanner.nextInt();
+				}
+				//to allow the user to know what they guessed and if it was too high or low
+				if (playerChoice1 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice1 + ", that's too low!");
+				}
+				if (playerChoice1 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice1 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100.");
+				//message to tell them to guess again
+			}
+			
+			//it redoes it 10 times over
+			int playerChoice2 = scanner.nextInt();
+			if (playerChoice2 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice2 < 1 || playerChoice2 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice2 = scanner.nextInt();
+				}
+				if (playerChoice2 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice2 + ", that's too low!");
+				}
+				if (playerChoice2 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice2 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. This is your second guess.");
+			}
+			
+			int playerChoice3 = scanner.nextInt();
+			if (playerChoice3 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice3 < 1 || playerChoice3 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice3 = scanner.nextInt();
+				}
+				if (playerChoice3 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice3 + ", that's too low!");
+				}
+				if (playerChoice3 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice3 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. 7 more guesses!");
+			}
+			
+			int playerChoice4 = scanner.nextInt();
+			if (playerChoice4 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice4 < 1 || playerChoice4 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice4 = scanner.nextInt();
+				}
+				if (playerChoice4 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice4 + ", that's too low!");
+				}
+				if (playerChoice4 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice4 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. Try harder");
+			}
+			
+			int playerChoice5 = scanner.nextInt();
+			if (playerChoice5 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice5 < 1 || playerChoice5 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice5 = scanner.nextInt();
+				}
+				if (playerChoice5 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice5 + ", that's too low!");
+				}
+				if (playerChoice5 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice5 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. You have 5 more guesses.");
+			}
+			
+			int playerChoice6 = scanner.nextInt();
+			if (playerChoice6 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice6 < 1 || playerChoice6 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice6 = scanner.nextInt();
+				}
+				if (playerChoice6 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice6 + ", that's too low!");
+				}
+				if (playerChoice6 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice6 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. You have 4 more guesses");
+			}
+	    
+			int playerChoice7 = scanner.nextInt();
+			if (playerChoice7 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice7 < 1 || playerChoice7 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice7 = scanner.nextInt();
+				}
+				if (playerChoice7 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice7 + ", that's too low!");
+				}
+				if (playerChoice7 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice7 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. You have 3 more guesses.");
+			}
+			
+			int playerChoice8 = scanner.nextInt();
+			if (playerChoice8 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice8 < 1 || playerChoice8 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice8 = scanner.nextInt();
+				}
+				if (playerChoice8 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice8 + ", that's too low!");
+				}
+				if (playerChoice8 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice8 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. You have 2 more guesses.");
+			}
+			
+			int playerChoice9 = scanner.nextInt();
+			if (playerChoice9 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice9 < 1 || playerChoice9 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice9 = scanner.nextInt();
+				}
+				if (playerChoice9 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice9 + ", that's too low!");
+				}
+				if (playerChoice9 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice9 + ", that's too high!");
+				}
+				System.out.println("Pick another number from 1 - 100. WARNING! You only have 1 more guess.");
+			}
+		
+			int playerChoice10 = scanner.nextInt();
+			if (playerChoice10 == computerChoice) {
+				System.out.println("Congrats, you win!");
+			}
+			else {
+				while (playerChoice10 < 1 || playerChoice10 > 100) {
+				    System.out.println("Invalid input! Please enter a number between 1 and 100:");
+				    playerChoice10 = scanner.nextInt();
+				}
+				if (playerChoice10 < computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice10 + ", that's too low!");
+				}
+				if (playerChoice10 > computerChoice) {
+					System.out.println("WRONG, you guessed: " + playerChoice10 + ", that's too high!");
+				}
+				System.out.println("YOU LOSE.");
+				
+			}
+			scanner.nextLine(); 
+			//message to user to see if they would like to play again
+			System.out.println("Would you like to play again? (y/n)");
+			gameOn = scanner.nextLine();
+
+			//if statement to restart or shut down the game
+			if (gameOn.equalsIgnoreCase("y")) {
+				System.out.println("Restarting game...");
+			}
+			else {
+				System.out.println("Goodbye!");
+				System.exit(0);
+				scanner.close();
+			}
+
+	}
+}
+}
