@@ -1,0 +1,57 @@
+/*
+ * Creation Date: 5/20/2026
+ * by: Kurtis Bradley
+ * 
+ * To test software on random, scanner, arrays, &&, ||, if, else, if else
+ * Rock, paper, scissors done poorly LOL
+ */
+package ifStatements;
+import java.util.Scanner;
+import java.util.Random;
+
+public class rockPaperScissors {
+
+	public static void main(String[] args) {
+		
+		//creation of scanner and random
+		Scanner scanner = new Scanner(System.in);
+		Random random = new Random();
+		
+		//creation of rock, paper, and scissors
+		String[] options = {"Rock", "Paper", "Scissors"};
+		
+		//player question
+		System.out.print("Choose 0 for Rock, 1 for Paper, or 2 for Scissors ");
+		int playerChoice = scanner.nextInt();
+		//scanning
+		
+		int computerChoice = random.nextInt(3);
+		//computer picking random choice
+	
+		//this shows the player what they chose and what the computer chose
+		System.out.println("You picked: " + options[playerChoice] + "\nAnd the computer picked: " + options[computerChoice]);
+	
+		//if and else statements outlining what wins and what doesn't
+		if (playerChoice == computerChoice) {
+			System.out.println("Its a tie!");
+		}
+		else if (playerChoice == 0 && computerChoice == 2) {
+			System.out.println("You win!");
+		}
+		else if (playerChoice == 1 && computerChoice == 0) {
+			System.out.println("You win!");
+		}
+
+		else if (playerChoice == 2 && computerChoice == 1) {
+			System.out.println("You win!");
+		}
+		
+		else {
+			System.out.println("You lose!");
+		}
+		
+			
+		scanner.close();
+	}
+
+}
