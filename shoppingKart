@@ -7,16 +7,33 @@ public class Arithmetic {
 		//creating the scanner
 		Scanner scanner = new Scanner(System.in);
 
+		//intial question of item, records in variable
         System.out.print("What item would you like to buy? ");
         String item = scanner.nextLine();
 
-        System.out.print("What is the price per item (like 12.99)? ");
-        String priceInput = scanner.next();
+		//declaration of variables outside of try catch
+		int dollars = 0;
+		int cents = 0;
 
-        String[] parts = priceInput.split("\\.");
-        int dollars = Integer.parseInt(parts[0]);
-        int cents = Integer.parseInt(parts[1]);
+		//to stop users making invalid inputs, while doing correct calculations
+        while (true) {
+			System.out.print("What is the price per item (like 12.99)? ");
+        	String priceInput = scanner.next();
 
+			try {
+        		String[] parts = priceInput.split("\\.");
+        		int dollars = Integer.parseInt(parts[0]);
+        		int cents = Integer.parseInt(parts[1]);
+
+				if (dollars >= 0 && cents >= 0) {
+					break;
+				} else {
+					System.out.println("Invalid input, negative numbers not allowed");
+				}
+			} catch (Exception e) {
+				System.out.println("invalid format. Please include both dollars and cents (e.g., 12.99).");
+			}
+		}
         int priceInCents = dollars * 100 + cents;
 
         System.out.print("How many would you like? ");
